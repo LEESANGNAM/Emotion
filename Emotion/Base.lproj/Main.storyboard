@@ -189,9 +189,12 @@
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title=" " image="emoji1">
+                                                <state key="normal" title=" ">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="emotionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KgE-7m-Qpx"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemPinkColor"/>
@@ -204,11 +207,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQg-30-um3">
                                         <rect key="frame" x="0.0" y="133.33333333333334" width="393" height="133.00000000000003"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5d-Qq-QSr">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5d-Qq-QSr">
                                                 <rect key="frame" x="130" y="0.0" width="133" height="133"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title=" " image="emoji2">
+                                                <state key="normal" title=" ">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -224,14 +227,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czh-Ps-3I1">
                                         <rect key="frame" x="0.0" y="266.33333333333331" width="393" height="133.33333333333331"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewE-q3-L7q">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewE-q3-L7q">
                                                 <rect key="frame" x="130" y="0.0" width="133" height="133.33333333333334"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ewE-q3-L7q" secondAttribute="height" multiplier="1:1" id="htl-b2-4Fo"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title=" " image="emoji3">
+                                                <state key="normal" title=" ">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -246,14 +249,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLu-pn-fBw">
                                         <rect key="frame" x="0.0" y="399.66666666666669" width="393" height="133.00000000000006"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaI-p2-EpW">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaI-p2-EpW">
                                                 <rect key="frame" x="129.66666666666669" y="-0.33333333333337123" width="133.66666666666669" height="133.66666666666666"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="CaI-p2-EpW" secondAttribute="height" multiplier="1:1" id="myU-rw-nhg"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title=" " image="emoji4">
+                                                <state key="normal" title=" ">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -268,14 +271,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpB-BA-e6N">
                                         <rect key="frame" x="0.0" y="532.66666666666663" width="393" height="133.33333333333337"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CII-61-kEz">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CII-61-kEz">
                                                 <rect key="frame" x="130" y="0.0" width="133" height="133.33333333333334"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="CII-61-kEz" secondAttribute="height" multiplier="1:1" id="zDQ-T7-eJ5"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title=" " image="emoji5">
+                                                <state key="normal" title=" ">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -300,6 +303,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="OH MY MOOD" id="yqs-RT-SdI"/>
+                    <connections>
+                        <outletCollection property="emotionButtons" destination="pmJ-gn-43C" collectionClass="NSMutableArray" id="Wft-xP-nDH"/>
+                        <outletCollection property="emotionButtons" destination="Y5d-Qq-QSr" collectionClass="NSMutableArray" id="iYT-uN-2Rk"/>
+                        <outletCollection property="emotionButtons" destination="ewE-q3-L7q" collectionClass="NSMutableArray" id="lRm-zh-xrN"/>
+                        <outletCollection property="emotionButtons" destination="CaI-p2-EpW" collectionClass="NSMutableArray" id="XMf-o2-M4a"/>
+                        <outletCollection property="emotionButtons" destination="CII-61-kEz" collectionClass="NSMutableArray" id="jV9-HX-oqb"/>
+                        <outletCollection property="backgroundViews" destination="cLU-0O-4Wr" collectionClass="NSMutableArray" id="AnC-Ol-V6q"/>
+                        <outletCollection property="backgroundViews" destination="UQg-30-um3" collectionClass="NSMutableArray" id="3wv-9d-Vt2"/>
+                        <outletCollection property="backgroundViews" destination="czh-Ps-3I1" collectionClass="NSMutableArray" id="Xcm-U5-OkN"/>
+                        <outletCollection property="backgroundViews" destination="VLu-pn-fBw" collectionClass="NSMutableArray" id="ETt-hx-6Oa"/>
+                        <outletCollection property="backgroundViews" destination="NpB-BA-e6N" collectionClass="NSMutableArray" id="kIB-gX-3Y1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -376,11 +391,6 @@
     </scenes>
     <resources>
         <image name="chart.bar" catalog="system" width="128" height="89"/>
-        <image name="emoji1" width="53" height="51"/>
-        <image name="emoji2" width="52" height="48"/>
-        <image name="emoji3" width="50" height="38"/>
-        <image name="emoji4" width="52" height="48"/>
-        <image name="emoji5" width="54" height="50"/>
         <image name="pencil.circle" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
