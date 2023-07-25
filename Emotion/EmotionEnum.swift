@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum Emotion: Int {
+enum Emotion: Int, CaseIterable {
     case veryHappy, happy, soso, bad, sad
     
 }

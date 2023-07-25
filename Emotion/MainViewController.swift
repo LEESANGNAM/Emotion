@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet var emotionButtons: [UIButton]!
     
+    @IBOutlet var resultLabels: [UILabel]!
     @IBOutlet var backgroundViews: [UIView]!
     
     override func viewDidLoad() {
@@ -31,6 +32,12 @@ class MainViewController: UIViewController {
         setUpViews(views: backgroundViews)
         setUpButtonImage(buttons: emotionButtons)
         resetValue()
+        setUpResultLabes()
+    }
+    func setUpResultLabes(){
+        for label in resultLabels{
+            label.text = "0"
+        }
     }
     
     func setUpViews(views: [UIView]){
@@ -48,6 +55,29 @@ class MainViewController: UIViewController {
     
     
     @IBAction func emotionButtonTapped(_ sender: UIButton) {
+        switch sender.tag{
+        case Emotion.veryHappy.rawValue:
+            veryHappyValue = veryHappyValue + 1
+            resultLabels[sender.tag].text = "\(veryHappyValue)"
+            print(Emotion.veryHappy,veryHappyValue)
+        case Emotion.happy.rawValue:
+            HappyValue = HappyValue + 1
+            resultLabels[sender.tag].text = "\(HappyValue)"
+            print(Emotion.happy,HappyValue)
+        case Emotion.soso.rawValue:
+            sosoValue = sosoValue + 1
+            resultLabels[sender.tag].text = "\(sosoValue)"
+            print(Emotion.soso,sosoValue)
+        case Emotion.bad.rawValue:
+            badValue = badValue + 1
+            resultLabels[sender.tag].text = "\(badValue)"
+            print(Emotion.bad,badValue)
+        case Emotion.sad.rawValue:
+            sadValue = sadValue + 1
+            resultLabels[sender.tag].text = "\(sadValue)"
+            print(Emotion.sad,sadValue)
+        default: break
+        }
     }
     
     // 랜덤컬러
