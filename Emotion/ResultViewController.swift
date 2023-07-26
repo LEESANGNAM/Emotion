@@ -40,31 +40,6 @@ class ResultViewController: UIViewController {
         view.backgroundColor = randomColor()
     }
     
-    func setUpLabel(){
-        for i in 0...resultLabels.count - 1 {
-            setData(index: i)
-        }
-    }
-    func emotionValue(emotion: Emotion) -> Int{
-        return  UserDefaults.standard.integer(forKey: "\(emotion)")
-    }
-    
-    func setData(index : Int) {
-        let emotion = emotionEnum[index]
-        switch emotion{
-        case .veryHappy:
-            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        case .happy:
-            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        case .soso:
-            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        case .bad:
-            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        case .sad:
-            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        }
-    }
-    
     func setUpPulldownButton(){
         let firstButton = UIAction(title: "지수 모두 초기화") { _ in
             self.emotionResetAll()
@@ -91,22 +66,61 @@ class ResultViewController: UIViewController {
         ])
         pullDownButton.menu = buttonMenu
     }
+    
+    
+    func setUpLabel(){
+        for emotion in emotionEnum{
+            setData(emotion: emotion)
+        }
+    }
+    func emotionValue(emotion: Emotion) -> Int{
+        return  UserDefaults.standard.integer(forKey: "\(emotion)")
+    }
+    
+    func setData(emotion : Emotion) {
+        guard let index = emotionEnum.firstIndex(of: emotion) else {
+            print("오류 발생")
+            return
+        }
+        // switch case 로 처리를 안해도 각 자 맞는걸로 처리할 것 같다.
+        resultLabels[index].text = "\(emotionValue(emotion: emotion))"
+//        let emotion = emotionEnum[index]
+//        switch emotion{
+//        case .veryHappy:
+//            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
+//        case .happy:
+//            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
+//        case .soso:
+//            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
+//        case .bad:
+//            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
+//        case .sad:
+//            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
+//        }
+    }
+    
 
     func emotionReset(emotion: Emotion){
         UserDefaults.standard.set(0, forKey: Emotion.getString(emotion)())
-        guard let index = emotionEnum.firstIndex(of: emotion) else { print("오류 발생"); return }
-        switch emotion {
-        case .veryHappy:
-            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        case .happy:
-            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        case .soso:
-            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        case .bad:
-            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        case .sad:
-            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
+        // 이모션에 해당하는 값이 allCase배열에 없으면 오류고 있으면 하나만나와서?
+        guard let index = emotionEnum.firstIndex(of: emotion) else {
+            print("오류 발생")
+            return
         }
+        // switch case 로 처리를 안해도 각 자 맞는걸로 처리할 것 같다.
+        resultLabels[index].text = "\(emotionValue(emotion: emotion))"
+        //        switch emotion{
+        //        case .veryHappy:
+        //            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
+        //        case .happy:
+        //            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
+        //        case .soso:
+        //            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
+        //        case .bad:
+        //            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
+        //        case .sad:
+        //            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
+        //        }
         
     }
     
