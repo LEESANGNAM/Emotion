@@ -35,6 +35,7 @@ class ResultViewController: UIViewController {
     
     func setUpView(view: UIView){
         view.layer.cornerRadius = 10
+        view.backgroundColor = randomColor()
     }
     
     func setUpLabel(){
@@ -68,18 +69,14 @@ class ResultViewController: UIViewController {
         UserDefaults.standard.set(0, forKey: Emotion.getString(.soso)())
         UserDefaults.standard.set(0, forKey: Emotion.getString(.bad)())
         UserDefaults.standard.set(0, forKey: Emotion.getString(.sad)())
-        
         setUpLabel()
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    func randomColor() -> UIColor {
+            let red = CGFloat.random(in: 0...1)
+            let green = CGFloat.random(in: 0...1)
+            let blue = CGFloat.random(in: 0...1)
+            let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+            return color
+        }
 
 }

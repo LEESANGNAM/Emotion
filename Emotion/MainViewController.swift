@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
     
     func setUpViews(views: [UIView]){
         for view in views {
-            view.backgroundColor = RandomColor()
+            view.backgroundColor = randomColor()
         }
     }
     
@@ -74,7 +74,7 @@ class MainViewController: UIViewController {
     }
     
     // 랜덤컬러
-    func RandomColor() -> UIColor {
+    func randomColor() -> UIColor {
             let red = CGFloat.random(in: 0...1)
             let green = CGFloat.random(in: 0...1)
             let blue = CGFloat.random(in: 0...1)
