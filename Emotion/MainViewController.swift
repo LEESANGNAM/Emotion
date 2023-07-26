@@ -9,11 +9,6 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    var veryHappyValue: Int = UserDefaults.standard.integer(forKey: "veryHappy")
-    var HappyValue: Int = UserDefaults.standard.integer(forKey: "Happy")
-    var sosoValue: Int = UserDefaults.standard.integer(forKey: "soso")
-    var badValue: Int = UserDefaults.standard.integer(forKey: "bad")
-    var sadValue: Int = UserDefaults.standard.integer(forKey: "sad")
     
     let EmotionEnum = Emotion.allCases
     
@@ -56,6 +51,12 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func emotionButtonTapped(_ sender: UIButton) {
+        var veryHappyValue: Int = UserDefaults.standard.integer(forKey: "veryHappy")
+        var HappyValue: Int = UserDefaults.standard.integer(forKey: "Happy")
+        var sosoValue: Int = UserDefaults.standard.integer(forKey: "soso")
+        var badValue: Int = UserDefaults.standard.integer(forKey: "bad")
+        var sadValue: Int = UserDefaults.standard.integer(forKey: "sad")
+        
         switch EmotionEnum[sender.tag]{
         case .veryHappy:
             veryHappyValue = veryHappyValue + 1

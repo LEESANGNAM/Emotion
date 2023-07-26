@@ -9,11 +9,6 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
-    var veryHappyValue: Int = UserDefaults.standard.integer(forKey: "veryHappy")
-    var HappyValue: Int = UserDefaults.standard.integer(forKey: "happy")
-    var sosoValue: Int = UserDefaults.standard.integer(forKey: "soso")
-    var badValue: Int = UserDefaults.standard.integer(forKey: "bad")
-    var sadValue: Int = UserDefaults.standard.integer(forKey: "sad")
     
     @IBOutlet var resultLabels: [UILabel]!
     let emotionEnum = Emotion.allCases
@@ -24,10 +19,12 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
-        for i in 0...resultLabels.count - 1{
-            setData(index: i)
-        }
+        setUpLabel()
         // Do any additional setup after loading the view.
+    }
+    // 탭바 넘어갈때 willappear 호출
+    override func viewWillAppear(_ animated: Bool) {
+        setUpLabel()
     }
     
     func setUpViews(){
@@ -40,9 +37,19 @@ class ResultViewController: UIViewController {
         view.layer.cornerRadius = 10
     }
     
-    
+    func setUpLabel(){
+        for i in 0...resultLabels.count - 1 {
+            setData(index: i)
+        }
+    }
     
     func setData(index : Int) {
+        var veryHappyValue: Int = UserDefaults.standard.integer(forKey: "veryHappy")
+        var HappyValue: Int = UserDefaults.standard.integer(forKey: "happy")
+        var sosoValue: Int = UserDefaults.standard.integer(forKey: "soso")
+        var badValue: Int = UserDefaults.standard.integer(forKey: "bad")
+        var sadValue: Int = UserDefaults.standard.integer(forKey: "sad")
+        
         switch emotionEnum[index]{
         case .veryHappy:
             resultLabels[index].text = "\(veryHappyValue)"
@@ -56,7 +63,17 @@ class ResultViewController: UIViewController {
             resultLabels[index].text = "\(sadValue)"
         }
     }
-
+    
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+        UserDefaults.standard.set(0, forKey: Emotion.getString(.veryHappy)())
+        UserDefaults.standard.set(0, forKey: Emotion.getString(.happy)())
+        UserDefaults.standard.set(0, forKey: Emotion.getString(.soso)())
+        UserDefaults.standard.set(0, forKey: Emotion.getString(.bad)())
+        UserDefaults.standard.set(0, forKey: Emotion.getString(.sad)())
+        
+        setUpLabel()
+    }
+    
     /*
     // MARK: - Navigation
 
