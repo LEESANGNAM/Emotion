@@ -28,7 +28,6 @@ class MainViewController: UIViewController {
     func configUI(){
         setUpViews(views: backgroundViews)
         setUpButtonImage(buttons: emotionButtons)
-        resetValue()
         setUpResultLabes()
     }
     func setUpResultLabes(){
@@ -50,34 +49,27 @@ class MainViewController: UIViewController {
         }
     }
     
-    @IBAction func emotionButtonTapped(_ sender: UIButton) {
-        var veryHappyValue: Int = UserDefaults.standard.integer(forKey: "veryHappy")
-        var HappyValue: Int = UserDefaults.standard.integer(forKey: "Happy")
-        var sosoValue: Int = UserDefaults.standard.integer(forKey: "soso")
-        var badValue: Int = UserDefaults.standard.integer(forKey: "bad")
-        var sadValue: Int = UserDefaults.standard.integer(forKey: "sad")
+   
+    func setValue(emotion: Emotion){
+        var value = UserDefaults.standard.integer(forKey: Emotion.getString(emotion)())
+        value = value + 1
+        UserDefaults.standard.set(value, forKey: Emotion.getString(emotion)())
         
-        switch EmotionEnum[sender.tag]{
+    }
+    @IBAction func emotionButtonTapped(_ sender: UIButton) {
+        
+        let emotion = EmotionEnum[sender.tag]
+        switch emotion{
         case .veryHappy:
-            veryHappyValue = veryHappyValue + 1
-            UserDefaults.standard.set(veryHappyValue, forKey: Emotion.getString(.veryHappy)())
-            print(Emotion.veryHappy,veryHappyValue)
+            setValue(emotion: emotion)
         case .happy:
-            HappyValue = HappyValue + 1
-            UserDefaults.standard.set(HappyValue, forKey: Emotion.getString(.happy)())
-            print(Emotion.happy,HappyValue)
+            setValue(emotion: emotion)
         case .soso:
-            sosoValue = sosoValue + 1
-            UserDefaults.standard.set(sosoValue, forKey: Emotion.getString(.soso)())
-            print(Emotion.soso,sosoValue)
+            setValue(emotion: emotion)
         case .bad:
-            badValue = badValue + 1
-            UserDefaults.standard.set(badValue, forKey: Emotion.getString(.bad)())
-            print(Emotion.bad,badValue)
+            setValue(emotion: emotion)
         case .sad:
-            sadValue = sadValue + 1
-            UserDefaults.standard.set(sadValue, forKey: Emotion.getString(.sad)())
-            print(Emotion.sad,sadValue)
+            setValue(emotion: emotion)
         }
     }
     
@@ -89,16 +81,6 @@ class MainViewController: UIViewController {
             let color = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
             return color
         }
-    // 값 초기화
-    
-    func resetValue(){
-        var veryHappyValue = 0
-        var HappyValue = 0
-        var sosoValue = 0
-        var badValue = 0
-        var sadValue = 0
-    }
-
 
 }
 
