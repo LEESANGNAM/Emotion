@@ -78,11 +78,14 @@ class ResultViewController: UIViewController {
     }
     
     func setData(emotion : Emotion) {
+        // 이모션에 해당하는 값이 allCase배열에 없으면 오류고(case 만큼의 표현을 할 레이블) 있으면 해당 레이블의 index를 뽑는다.
         guard let index = emotionEnum.firstIndex(of: emotion) else {
             print("오류 발생")
             return
         }
         // switch case 로 처리를 안해도 각 자 맞는걸로 처리할 것 같다.
+        // 새로운 case가 생기면 switch 를 쓰면 case 를 추가해주는 에러가 떠서 바로 추가 해 줄 수 있을 것 같다.
+        // 한줄로 처리하면 더 간단?해보인다.
         resultLabels[index].text = "\(emotionValue(emotion: emotion))"
 //        let emotion = emotionEnum[index]
 //        switch emotion{
@@ -102,35 +105,13 @@ class ResultViewController: UIViewController {
 
     func emotionReset(emotion: Emotion){
         UserDefaults.standard.set(0, forKey: Emotion.getString(emotion)())
-        // 이모션에 해당하는 값이 allCase배열에 없으면 오류고 있으면 하나만나와서?
-        guard let index = emotionEnum.firstIndex(of: emotion) else {
-            print("오류 발생")
-            return
-        }
-        // switch case 로 처리를 안해도 각 자 맞는걸로 처리할 것 같다.
-        resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        //        switch emotion{
-        //        case .veryHappy:
-        //            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        //        case .happy:
-        //            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        //        case .soso:
-        //            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        //        case .bad:
-        //            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        //        case .sad:
-        //            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-        //        }
-        
+        setData(emotion: emotion)
     }
     
     func emotionResetAll(){
-        UserDefaults.standard.set(0, forKey: Emotion.getString(.veryHappy)())
-        UserDefaults.standard.set(0, forKey: Emotion.getString(.happy)())
-        UserDefaults.standard.set(0, forKey: Emotion.getString(.soso)())
-        UserDefaults.standard.set(0, forKey: Emotion.getString(.bad)())
-        UserDefaults.standard.set(0, forKey: Emotion.getString(.sad)())
-        setUpLabel()
+        for emotion in emotionEnum {
+            emotionReset(emotion: emotion)
+        }
     }
     
 func randomColor() -> UIColor {
