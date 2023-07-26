@@ -59,18 +59,19 @@ class MainViewController: UIViewController {
     @IBAction func emotionButtonTapped(_ sender: UIButton) {
         
         let emotion = EmotionEnum[sender.tag]
-        switch emotion{
-        case .veryHappy:
-            setValue(emotion: emotion)
-        case .happy:
-            setValue(emotion: emotion)
-        case .soso:
-            setValue(emotion: emotion)
-        case .bad:
-            setValue(emotion: emotion)
-        case .sad:
-            setValue(emotion: emotion)
-        }
+        setValue(emotion: emotion)
+//        switch emotion{
+//        case .veryHappy:
+//            setValue(emotion: emotion)
+//        case .happy:
+//            setValue(emotion: emotion)
+//        case .soso:
+//            setValue(emotion: emotion)
+//        case .bad:
+//            setValue(emotion: emotion)
+//        case .sad:
+//            setValue(emotion: emotion)
+//        }
     }
     
     // 랜덤컬러
