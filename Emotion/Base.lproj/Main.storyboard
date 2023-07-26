@@ -55,7 +55,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="점수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obL-qG-AbT">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="점수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obL-qG-AbT">
                                                 <rect key="frame" x="307.66666666666669" y="24.333333333333314" width="40.333333333333314" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -81,7 +81,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="점수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeQ-5k-g6v">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="점수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeQ-5k-g6v">
                                                 <rect key="frame" x="307.66666666666669" y="24.666666666666686" width="40.333333333333314" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -107,7 +107,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="점수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFa-0y-nUu">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="점수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFa-0y-nUu">
                                                 <rect key="frame" x="307.66666666666669" y="24.333333333333314" width="40.333333333333314" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -133,7 +133,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="점수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeP-BO-0gc">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="점수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeP-BO-0gc">
                                                 <rect key="frame" x="307.66666666666669" y="24.666666666666629" width="40.333333333333314" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -164,11 +164,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="OH MY MOOD" id="fJG-QY-plS"/>
                     <connections>
-                        <outletCollection property="resultLabels" destination="NoT-HJ-icp" collectionClass="NSMutableArray" id="ubm-f3-jko"/>
-                        <outletCollection property="resultLabels" destination="yQK-jf-bBU" collectionClass="NSMutableArray" id="AFS-wk-auB"/>
-                        <outletCollection property="resultLabels" destination="rIm-cN-hUV" collectionClass="NSMutableArray" id="Rml-xv-2vE"/>
-                        <outletCollection property="resultLabels" destination="rJF-wo-ouw" collectionClass="NSMutableArray" id="fMK-71-tai"/>
-                        <outletCollection property="resultLabels" destination="cF9-OH-GNB" collectionClass="NSMutableArray" id="d1p-oi-hl4"/>
+                        <outletCollection property="resultLabels" destination="AdP-8s-SX4" collectionClass="NSMutableArray" id="WtS-py-vSW"/>
+                        <outletCollection property="resultLabels" destination="obL-qG-AbT" collectionClass="NSMutableArray" id="kPB-dW-mDj"/>
+                        <outletCollection property="resultLabels" destination="eeQ-5k-g6v" collectionClass="NSMutableArray" id="cXz-yV-mQQ"/>
+                        <outletCollection property="resultLabels" destination="MFa-0y-nUu" collectionClass="NSMutableArray" id="BiM-jz-XoY"/>
+                        <outletCollection property="resultLabels" destination="PeP-BO-0gc" collectionClass="NSMutableArray" id="c2z-am-437"/>
+                        <outletCollection property="labelBackgroundViews" destination="anV-GE-gZ8" collectionClass="NSMutableArray" id="kXt-2P-08v"/>
+                        <outletCollection property="labelBackgroundViews" destination="ST4-jN-exF" collectionClass="NSMutableArray" id="pxc-on-XiB"/>
+                        <outletCollection property="labelBackgroundViews" destination="asA-t5-5xX" collectionClass="NSMutableArray" id="Gsn-Ig-Fmv"/>
+                        <outletCollection property="labelBackgroundViews" destination="yFu-qA-vc9" collectionClass="NSMutableArray" id="Hft-E8-PeY"/>
+                        <outletCollection property="labelBackgroundViews" destination="ago-kE-k6I" collectionClass="NSMutableArray" id="j9m-1e-Fqz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiI-Tk-MXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

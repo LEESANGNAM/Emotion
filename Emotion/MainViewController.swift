@@ -8,12 +8,14 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
-    var veryHappyValue: Int = 0
-    var HappyValue: Int = 0
-    var sosoValue: Int = 0
-    var badValue: Int = 0
-    var sadValue: Int = 0
+    
+    var veryHappyValue: Int = UserDefaults.standard.integer(forKey: "veryHappy")
+    var HappyValue: Int = UserDefaults.standard.integer(forKey: "Happy")
+    var sosoValue: Int = UserDefaults.standard.integer(forKey: "soso")
+    var badValue: Int = UserDefaults.standard.integer(forKey: "bad")
+    var sadValue: Int = UserDefaults.standard.integer(forKey: "sad")
+    
+    let EmotionEnum = Emotion.allCases
     
     @IBOutlet var emotionButtons: [UIButton]!
     
@@ -53,30 +55,28 @@ class MainViewController: UIViewController {
         }
     }
     
-    
     @IBAction func emotionButtonTapped(_ sender: UIButton) {
-        switch sender.tag{
-        case Emotion.veryHappy.rawValue:
+        switch EmotionEnum[sender.tag]{
+        case .veryHappy:
             veryHappyValue = veryHappyValue + 1
-            resultLabels[sender.tag].text = "\(veryHappyValue)"
+            UserDefaults.standard.set(veryHappyValue, forKey: Emotion.getString(.veryHappy)())
             print(Emotion.veryHappy,veryHappyValue)
-        case Emotion.happy.rawValue:
+        case .happy:
             HappyValue = HappyValue + 1
-            resultLabels[sender.tag].text = "\(HappyValue)"
+            UserDefaults.standard.set(HappyValue, forKey: Emotion.getString(.happy)())
             print(Emotion.happy,HappyValue)
-        case Emotion.soso.rawValue:
+        case .soso:
             sosoValue = sosoValue + 1
-            resultLabels[sender.tag].text = "\(sosoValue)"
+            UserDefaults.standard.set(sosoValue, forKey: Emotion.getString(.soso)())
             print(Emotion.soso,sosoValue)
-        case Emotion.bad.rawValue:
+        case .bad:
             badValue = badValue + 1
-            resultLabels[sender.tag].text = "\(badValue)"
+            UserDefaults.standard.set(badValue, forKey: Emotion.getString(.bad)())
             print(Emotion.bad,badValue)
-        case Emotion.sad.rawValue:
+        case .sad:
             sadValue = sadValue + 1
-            resultLabels[sender.tag].text = "\(sadValue)"
+            UserDefaults.standard.set(sadValue, forKey: Emotion.getString(.sad)())
             print(Emotion.sad,sadValue)
-        default: break
         }
     }
     

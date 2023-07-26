@@ -11,4 +11,19 @@ import Foundation
 enum Emotion: Int, CaseIterable {
     case veryHappy, happy, soso, bad, sad
     
+    func getString() -> String {
+        switch self{
+            
+        case .veryHappy:
+            return "veryHappy"
+        case .happy:
+            return "happy"
+        case .soso:
+            return "soso"
+        case .bad:
+            return "bad"
+        case .sad:
+            return "sad"
+        }
+    }
 }
