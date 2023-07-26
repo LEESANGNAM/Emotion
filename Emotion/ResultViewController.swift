@@ -42,25 +42,23 @@ class ResultViewController: UIViewController {
             setData(index: i)
         }
     }
+    func emotionValue(emotion: Emotion) -> Int{
+        return  UserDefaults.standard.integer(forKey: "\(emotion)")
+    }
     
     func setData(index : Int) {
-        var veryHappyValue: Int = UserDefaults.standard.integer(forKey: "veryHappy")
-        var HappyValue: Int = UserDefaults.standard.integer(forKey: "happy")
-        var sosoValue: Int = UserDefaults.standard.integer(forKey: "soso")
-        var badValue: Int = UserDefaults.standard.integer(forKey: "bad")
-        var sadValue: Int = UserDefaults.standard.integer(forKey: "sad")
-        
-        switch emotionEnum[index]{
+        let emotion = emotionEnum[index]
+        switch emotion{
         case .veryHappy:
-            resultLabels[index].text = "\(veryHappyValue)"
+            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
         case .happy:
-            resultLabels[index].text = "\(HappyValue)"
+            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
         case .soso:
-            resultLabels[index].text = "\(sosoValue)"
+            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
         case .bad:
-            resultLabels[index].text = "\(badValue)"
+            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
         case .sad:
-            resultLabels[index].text = "\(sadValue)"
+            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
         }
     }
     
