@@ -12,7 +12,7 @@ class ResultViewController: UIViewController {
     
     @IBOutlet var resultLabels: [UILabel]!
     let emotionEnum = Emotion.allCases
-    
+    let userDefaults = UserDefaults.standard
     @IBOutlet weak var pullDownButton: UIButton!
     
     @IBOutlet var labelBackgroundViews: [UIView]!
@@ -26,6 +26,7 @@ class ResultViewController: UIViewController {
     }
     // 탭바 넘어갈때 willappear 호출
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setUpLabel()
     }
     
@@ -74,7 +75,7 @@ class ResultViewController: UIViewController {
         }
     }
     func emotionValue(emotion: Emotion) -> Int{
-        return  UserDefaults.standard.integer(forKey: "\(emotion)")
+        return  userDefaults.integer(forKey: Emotion.getString(emotion)())
     }
     
     func setData(emotion : Emotion) {
@@ -87,24 +88,11 @@ class ResultViewController: UIViewController {
         // 새로운 case가 생기면 switch 를 쓰면 case 를 추가해주는 에러가 떠서 바로 추가 해 줄 수 있을 것 같다.
         // 한줄로 처리하면 더 간단?해보인다.
         resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-//        let emotion = emotionEnum[index]
-//        switch emotion{
-//        case .veryHappy:
-//            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-//        case .happy:
-//            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-//        case .soso:
-//            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-//        case .bad:
-//            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-//        case .sad:
-//            resultLabels[index].text = "\(emotionValue(emotion: emotion))"
-//        }
     }
     
 
     func emotionReset(emotion: Emotion){
-        UserDefaults.standard.set(0, forKey: Emotion.getString(emotion)())
+        userDefaults.set(0, forKey: Emotion.getString(emotion)())
         setData(emotion: emotion)
     }
     

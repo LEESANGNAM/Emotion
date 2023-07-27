@@ -415,6 +415,7 @@
                     <connections>
                         <segue destination="0X0-V6-KFI" kind="relationship" relationship="viewControllers" id="Pi0-3U-WT8"/>
                         <segue destination="rOQ-dd-Lif" kind="relationship" relationship="viewControllers" id="vhI-VQ-dNy"/>
+                        <segue destination="1uC-25-Jai" kind="relationship" relationship="viewControllers" id="L95-ia-JkV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnt-Fp-aIU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -425,15 +426,8 @@
         <scene sceneID="rTS-DP-UbD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0X0-V6-KFI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="작성하기" springLoaded="YES" id="bQJ-dM-KVd">
+                    <tabBarItem key="tabBarItem" title="작성하기" image="pencil.circle" catalog="system" springLoaded="YES" id="bQJ-dM-KVd">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <imageReference key="selectedImage" image="pencil.circle" catalog="system" symbolScale="medium" renderingMode="hierarchical">
-                            <hierarchicalColors>
-                                <color systemColor="labelColor"/>
-                                <color systemColor="secondaryLabelColor"/>
-                                <color systemColor="tertiaryLabelColor"/>
-                            </hierarchicalColors>
-                        </imageReference>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zZ4-xh-9bP">
@@ -449,11 +443,41 @@
             </objects>
             <point key="canvasLocation" x="637.40458015267177" y="-55.633802816901408"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="zoy-e2-gYB">
+            <objects>
+                <viewController id="1uC-25-Jai" customClass="SecondViewController" customModule="Emotion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x3b-Dc-wpA">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biE-OO-5pj">
+                                <rect key="frame" x="175" y="277" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="N6q-CE-Zwc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="w7E-vD-Fv9"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="biE-OO-5pj" id="nZF-tM-3XV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hxm-yn-azT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-364" y="680"/>
+        </scene>
         <!--통계보기-->
         <scene sceneID="AUZ-hB-uFK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rOQ-dd-Lif" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="통계보기" selectedImage="chart.bar" catalog="system" springLoaded="YES" id="b1q-nR-ahN"/>
+                    <tabBarItem key="tabBarItem" title="통계보기" springLoaded="YES" id="b1q-nR-ahN">
+                        <imageReference key="image" image="chart.bar" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uku-H1-eD6">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -472,12 +496,6 @@
     <resources>
         <image name="chart.bar" catalog="system" width="128" height="89"/>
         <image name="pencil.circle" catalog="system" width="128" height="123"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -495,9 +513,6 @@
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

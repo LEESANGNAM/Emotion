@@ -11,7 +11,7 @@ class MainViewController: UIViewController {
     
     
     let EmotionEnum = Emotion.allCases
-    
+    let userDefaults = UserDefaults.standard
     @IBOutlet var emotionButtons: [UIButton]!
     
     @IBOutlet var resultLabels: [UILabel]!
@@ -51,9 +51,10 @@ class MainViewController: UIViewController {
     
    
     func setValue(emotion: Emotion){
-        var value = UserDefaults.standard.integer(forKey: Emotion.getString(emotion)())
+        var value = userDefaults.integer(forKey: Emotion.getString(emotion)())
         value = value + 1
-        UserDefaults.standard.set(value, forKey: Emotion.getString(emotion)())
+        userDefaults.set(value, forKey: Emotion.getString(emotion)())
+        // 사라질때 한번 저장 해 도 되지않을까
         
     }
     @IBAction func emotionButtonTapped(_ sender: UIButton) {
